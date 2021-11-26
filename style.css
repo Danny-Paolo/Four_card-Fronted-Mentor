@@ -1,0 +1,132 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --section-bg: white;
+  --max-width: 1340px;
+  --title-color: rgb(192, 192, 192);
+  --subtitle-color: rgb(192, 192, 192);
+  --cards-bg: white;
+  --title-bold: black;
+  --margin-container: 2.5rem;
+  --margin-sides: 1.5rem;
+  --card-rigth-color: blue;
+  --card-left-color: chartreuse;
+  --card-top-color: red;
+  --card-bottom-color: peru;
+
+  /* Medidas Mobile */
+
+  @media screen and (max-width: 600px) {
+    --max-width: 140px;
+    --section-bg: blue;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  min-height: 100vh;
+  display: flex;
+}
+
+.section {
+  background: var(--section-bg);
+  max-width: var(--max-width);
+  width: 100%;
+  margin: auto;
+  box-shadow: 2px 2px 10px rgb(211, 213, 215), -2px -2px 10px rgb(211, 213, 215);
+}
+
+.section__container {
+  max-width: 85%;
+  margin: var(--margin-container) auto;
+}
+
+/* Titulo */
+
+.section__title {
+  text-align: center;
+  color: var(--title-color);
+  margin-bottom: 2.5rem;
+}
+
+.title__h1 {
+  font-weight: normal;
+  color: gray;
+}
+
+.title__bold {
+  font-weight: bolder;
+  color: var(--title-bold);
+  display: block;
+}
+
+.title__parrafo p {
+  margin: 0;
+}
+
+.title__parrafo span {
+  display: block;
+}
+
+/* Cards */
+
+.main {
+  display: flex;
+  gap: var(--margin-sides);
+}
+
+@media screen and (max-width: 700px) {
+  .main {
+    flex-direction: column;
+  }
+}
+
+.main__center {
+  width: 100%;
+}
+
+.main__card {
+  width: 100%;
+  height: auto;
+  align-self: center;
+  border-top: 5px solid;
+  border-radius: 0.5em;
+  background: var(--cards-bg);
+  padding: 1em;
+  box-shadow: 4px 4px 8px rgb(211, 213, 215), -4px -4px 8px rgb(211, 213, 215);
+}
+
+.card__subtitle {
+  margin: 0;
+}
+
+.card__subparrafo {
+  color: var(--subtitle-color);
+}
+
+.main__card--right {
+  border-color: var(--card-rigth-color);
+}
+
+.main__card--left {
+  border-color: var(--card-left-color);
+}
+
+.main__card--top {
+  border-color: var(--card-top-color);
+  margin-bottom: var(--margin-sides);
+}
+
+.main__card--bottom {
+  border-color: var(--card-bottom-color);
+}
+
+.card__img img {
+  display: block;
+  margin-left: auto;
+}
